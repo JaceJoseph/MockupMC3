@@ -16,6 +16,7 @@ class Rehearsal1ViewController: UIViewController {
     }
     
 
+    @IBOutlet weak var cardView: UIView!
     @IBAction func exitModalRehearsal1(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

@@ -19,6 +19,8 @@
 		7001E912230E382600D44146 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001E911230E382600D44146 /* RecordViewController.swift */; };
 		7001E914230E3B4C00D44146 /* A.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 7001E913230E3B4C00D44146 /* A.MOV */; };
 		7001E916230E3FDF00D44146 /* RoundedButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001E915230E3FDF00D44146 /* RoundedButtons.swift */; };
+		70765F55230ED08700EEFA74 /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70765F54230ED08700EEFA74 /* Pulsing.swift */; };
+		70765F57230EE61500EEFA74 /* SetOfNudgeCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70765F56230EE61500EEFA74 /* SetOfNudgeCardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		7001E911230E382600D44146 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7001E913230E3B4C00D44146 /* A.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = A.MOV; path = ../../../../Downloads/testVideo/testVideo/A.MOV; sourceTree = "<group>"; };
 		7001E915230E3FDF00D44146 /* RoundedButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtons.swift; sourceTree = "<group>"; };
+		70765F54230ED08700EEFA74 /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pulsing.swift; path = "../../Ominous Beeping App/Ominous Beeping App/Pulsing.swift"; sourceTree = "<group>"; };
+		70765F56230EE61500EEFA74 /* SetOfNudgeCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOfNudgeCardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				7001E90F230D8BFA00D44146 /* Rehearsal1ViewController.swift */,
 				7001E911230E382600D44146 /* RecordViewController.swift */,
 				7001E915230E3FDF00D44146 /* RoundedButtons.swift */,
+				70765F54230ED08700EEFA74 /* Pulsing.swift */,
+				70765F56230EE61500EEFA74 /* SetOfNudgeCardsViewController.swift */,
 			);
 			path = MockupMC3;
 			sourceTree = "<group>";
@@ -157,7 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70765F57230EE61500EEFA74 /* SetOfNudgeCardsViewController.swift in Sources */,
 				7001E90A230B9A3400D44146 /* bottomWindow.swift in Sources */,
+				70765F55230ED08700EEFA74 /* Pulsing.swift in Sources */,
 				7001E8FA230B988500D44146 /* ViewController.swift in Sources */,
 				7001E90E230BF82100D44146 /* NudgePageViewController.swift in Sources */,
 				7001E912230E382600D44146 /* RecordViewController.swift in Sources */,

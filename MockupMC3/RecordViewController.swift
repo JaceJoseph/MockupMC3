@@ -17,14 +17,21 @@ func getDocumentsDirectory() -> URL {
 class RecordViewController: UIViewController {
     @IBOutlet var recordButton: UIButton!
     @IBOutlet var playButton: UIButton!
-    @IBOutlet weak var waveImage: UIImageView!
+    @IBOutlet weak var recordBackView: UIView!
+    @IBOutlet weak var indicatorLabel: UILabel!
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     
+    lazy var pulse=Pulsing(numberOfPulses: Float.infinity, radius: 200, position:recordBackView.center)
+    
+    var indicatorString:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        recordBackView.layer.cornerRadius = self.recordBackView.frame.height/2
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -52,17 +59,24 @@ class RecordViewController: UIViewController {
     
     func loadRecordingUI() {
         recordButton.isHidden = false
-        recordButton.setTitle("Tap to Record", for: .normal)
+        indicatorLabel.text = indicatorString
+//        recordButton.setTitle("Tap to Record", for: .normal)
     }
     
+    func addPulse(){
+        pulse=Pulsing(numberOfPulses: Float.infinity, radius: 200, position:recordBackView.center)
+        pulse.animationDuration = 0.8
+        pulse.backgroundColor = UIColor.green.cgColor
+        self.view.layer.insertSublayer(pulse, below: recordBackView.layer)
+    }
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
         if audioRecorder == nil {
             startRecording()
-            waveImage.isHidden = false
+            
         } else {
             finishRecording(success: true)
-            waveImage.isHidden = true
+            pulse.removeFromSuperlayer()
         }
     }
     
@@ -78,6 +92,7 @@ class RecordViewController: UIViewController {
     // MARK: - Recording
     
     func startRecording() {
+        addPulse()
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
         
         let settings = [
@@ -92,7 +107,7 @@ class RecordViewController: UIViewController {
             audioRecorder.delegate = self
             audioRecorder.record()
             
-            recordButton.setTitle("Tap to Stop", for: .normal)
+//            recordButton.setTitle("Tap to Stop", for: .normal)
         } catch {
             finishRecording(success: false)
         }
@@ -103,11 +118,11 @@ class RecordViewController: UIViewController {
         audioRecorder = nil
         
         if success {
-            recordButton.setTitle("Tap to Re-record", for: .normal)
+//            recordButton.setTitle("Tap to Re-record", for: .normal)
             playButton.setTitle("Play Your Recording", for: .normal)
             playButton.isHidden = false
         } else {
-            recordButton.setTitle("Tap to Record", for: .normal)
+//            recordButton.setTitle("Tap to Record", for: .normal)
             playButton.isHidden = true
             // recording failed :(
         }
